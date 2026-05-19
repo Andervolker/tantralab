@@ -807,11 +807,73 @@
       .ba-mid-line { flex: 1; width: auto; height: 1px; }
     }
     @media (max-width: 700px) {
-      .hero-split { flex-direction: column; }
-      .hero-half.left  .guide-tag { left: 14px; bottom: 14px; top: auto; }
-      .hero-half.right .guide-tag { right: 14px; top: 14px; bottom: auto; text-align: right; }
-      .hero-center-line, .hero-center-blend { display: none; }
-      .hero-content { padding: 0 5vw 12vw; }
+      /* ── Hero: switch from fullscreen absolute to natural flow ── */
+      #hero {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding-top: 72px !important;
+      }
+
+      /* Text block: pull out of absolute, show first */
+      .hero-content {
+        position: static !important;
+        transform: none !important;
+        order: 1 !important;
+        width: 100% !important;
+        padding: 32px 20px 24px !important;
+        text-align: center !important;
+        z-index: auto !important;
+      }
+      .hero-content .eyebrow  { position: static !important; transform: none !important; width: 100% !important; margin-bottom: 10px !important; }
+      .hero-content h1        { position: static !important; transform: none !important; font-size: 28px !important; line-height: 1.3 !important; margin-bottom: 14px !important; }
+      .hero-content .hero-lead{ position: static !important; transform: none !important; font-size: 0.9rem !important; margin-bottom: 20px !important; }
+      .hero-content .btn      { position: static !important; transform: none !important; }
+
+      /* Photos: grid side-by-side below text */
+      .hero-split {
+        position: static !important;
+        order: 2 !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        width: 100% !important;
+        padding: 0 12px 20px !important;
+        box-sizing: border-box !important;
+      }
+      .hero-half {
+        position: relative !important;
+        height: 260px !important;
+        flex: none !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+      }
+      .hero-half img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      /* Name tags: centred at bottom of each photo */
+      .hero-half .guide-tag {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        right: auto !important;
+        top: auto !important;
+        transform: translateX(-50%) !important;
+        width: 90% !important;
+        text-align: center !important;
+        padding: 8px 12px 10px !important;
+      }
+      .hero-half .guide-tag .gname  { font-size: 1.3rem !important; }
+      .hero-half .guide-tag .grole  { font-size: 0.55rem !important; }
+
+      /* Hide decorative chrome */
+      .hero-center-line, .hero-center-blend, .hero-bottom, .hero-scroll { display: none !important; }
+
       #float-cta { bottom: 20px; right: 16px; }
       #float-cta button { padding: 12px 20px; font-size: 0.7rem; }
     }
