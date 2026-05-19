@@ -856,17 +856,18 @@
         width: 100% !important;
         height: 100% !important;
       }
-      /* Name tags: centred at bottom of each photo */
+      /* Name tags: same width, centred in each photo via left+right */
       .hero-half .guide-tag {
         position: absolute !important;
         bottom: 10px !important;
-        left: 50% !important;
-        right: auto !important;
+        left: 8px !important;
+        right: 8px !important;
         top: auto !important;
-        transform: translateX(-50%) !important;
-        width: 90% !important;
+        transform: none !important;
+        width: auto !important;
         text-align: center !important;
-        padding: 8px 12px 10px !important;
+        padding: 8px 10px 10px !important;
+        box-sizing: border-box !important;
       }
       .hero-half .guide-tag .gname  { font-size: 1.3rem !important; }
       .hero-half .guide-tag .grole  { font-size: 0.55rem !important; }
@@ -876,6 +877,22 @@
 
       #float-cta { bottom: 20px; right: 16px; }
       #float-cta button { padding: 12px 20px; font-size: 0.7rem; }
+
+      /* Cookie banner: single compact strip */
+      #cookie {
+        flex-wrap: nowrap !important;
+        padding: 8px 14px !important;
+        font-size: 11px !important;
+        gap: 10px !important;
+        border-radius: 30px !important;
+        bottom: 12px !important;
+      }
+      .ck-btn {
+        padding: 5px 14px !important;
+        font-size: 10px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
     }
     @media (max-width: 600px) {
       .footer-inner { grid-template-columns: 1fr; }
@@ -918,7 +935,7 @@
         <div class="half-overlay"></div>
         <div class="guide-tag">
           <span class="gname">Лера</span>
-          <span class="grole">Проводник · Психолог тела</span>
+          <span class="grole">Проводник · Телесный терапевт</span>
         </div>
       </div>
       <!-- RIGHT: Андрей -->
@@ -995,7 +1012,7 @@
       <div class="photo-grid">
         <div class="photo-card reveal si d1">
           <div class="pw"><img src="./lera.jpg" alt="Лера" /></div>
-          <div class="photo-label"><h4>Лера</h4><p>Проводник · Психолог тела</p></div>
+          <div class="photo-label"><h4>Лера</h4><p>Проводник · Телесный терапевт</p></div>
         </div>
         <div class="photo-card reveal si d2">
           <div class="pw"><img src="./andrey1.jpg" alt="Андрей" style="object-position: top center;" /></div>
