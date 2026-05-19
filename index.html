@@ -196,10 +196,15 @@
       object-fit: cover !important;
       transform: scale(1.25) translate(-10%, -12%) !important;
     }
-    img[src*="lera1.jpg"] {
-      width: 100% !important; height: 100% !important;
-      object-fit: cover !important;
-      transform: scale(1.1) translate(0%, -8%) !important;
+    img[src*="lera.jpg"] {
+      position: absolute !important;
+      inset: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+      object-fit: initial !important;
     }
 
     /* Inset vignette — depth on each half */
@@ -223,7 +228,7 @@
     }
     /* Guide name tags */
     .guide-tag {
-      position: absolute; bottom: clamp(80px, 8vh, 130px);
+      position: absolute; bottom: clamp(24px, 4vh, 56px);
       z-index: 10;
       background: rgba(8,3,2,0.55);
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -232,7 +237,7 @@
       border-radius: 14px;
     }
     .hero-half.left  .guide-tag { left: 5%;  }
-    .hero-half.right .guide-tag { right: 20px !important; left: auto !important; width: auto !important; text-align: right; }
+    .hero-half.right .guide-tag { right: 5%; left: auto; text-align: right; }
     .guide-tag .gname {
       display: block;
       font-family: 'Cormorant Garamond', serif;
@@ -738,27 +743,27 @@
 
     /* ═══ COOKIE ══════════════════════════════════════ */
     #cookie {
-      position: fixed; bottom: 24px; left: 50%;
+      position: fixed; bottom: 18px; left: 50%;
       transform: translateX(-50%) translateY(120%);
       z-index: 1500;
-      background: rgba(26,18,16,0.90);
-      backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
-      color: rgba(255,255,255,0.72); padding: 13px 22px;
-      border-radius: 50px; font-size: 0.78rem;
-      display: flex; align-items: center; gap: 18px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.28);
-      border: 1px solid rgba(201,169,110,0.12);
-      opacity: 0; flex-wrap: wrap; justify-content: center;
-      max-width: calc(100vw - 40px);
+      background: rgba(10,7,6,0.38);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      color: rgba(255,255,255,0.45); padding: 8px 16px;
+      border-radius: 50px; font-size: 0.7rem;
+      display: flex; align-items: center; gap: 12px; flex-wrap: nowrap;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.08);
+      opacity: 0; white-space: nowrap;
+      max-width: calc(100vw - 32px);
       transition: transform 0.6s var(--ease), opacity 0.6s ease;
     }
     #cookie.vis { transform: translateX(-50%) translateY(0); opacity: 1; }
     #cookie.hid { transform: translateX(-50%) translateY(140%); opacity: 0; }
     .ck-btn {
-      background: linear-gradient(135deg, var(--wine), var(--wine-2));
-      color: var(--white); border: none;
-      padding: 7px 20px; border-radius: 28px;
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+      background: rgba(140,45,56,0.75);
+      color: rgba(255,255,255,0.88); border: none;
+      padding: 5px 14px; border-radius: 28px;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
       cursor: pointer; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0;
     }
     .ck-btn:hover { opacity: 0.88; transform: scale(1.03); }
@@ -931,7 +936,7 @@
     <div class="hero-split">
       <!-- LEFT: Лера -->
       <div class="hero-half left">
-        <img src="./lera1.jpg" alt="Лера — тантрический проводник" />
+        <img src="./lera.jpg" alt="Лера — тантрический проводник" />
         <div class="half-overlay"></div>
         <div class="guide-tag">
           <span class="gname">Лера</span>
@@ -1011,7 +1016,7 @@
       </div>
       <div class="photo-grid">
         <div class="photo-card reveal si d1">
-          <div class="pw"><img src="./lera.jpg" alt="Лера" /></div>
+          <div class="pw"><img src="./lera1.jpg" alt="Лера" style="object-position: center 60%;" /></div>
           <div class="photo-label"><h4>Лера</h4><p>Проводник · Телесный терапевт</p></div>
         </div>
         <div class="photo-card reveal si d2">
@@ -1462,13 +1467,18 @@
         `🧘 <b>Формат:</b> ${format}\n\n` +
         `⏰ <i>${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Yekaterinburg' })}</i>`;
 
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 7000);
       try {
         await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' })
+          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' }),
+          signal: controller.signal
         });
-      } catch (_) { /* silent */ }
+      } catch (_) { /* silent — close modal regardless */ } finally {
+        clearTimeout(timer);
+      }
 
       closeModal();
       this.reset();
