@@ -188,24 +188,10 @@
       object-fit: cover;
       transition: transform 8s ease;
     }
-    .hero-half.left img  { object-position: 75% top; }
-    .hero-half.right img { object-position: center top; }
+    /* Hero images — head alignment */
+    .hero-half.left  img { object-position: center 12%; transform: none; }
+    .hero-half.right img { object-position: center top; transform: scale(1.35) translate(5%, 6%); }
     #hero:hover .hero-half img { transform: scale(1.03); }
-    img[src*="andrey.jpg"] {
-      width: 100% !important; height: 100% !important;
-      object-fit: cover !important;
-      transform: scale(1.25) translate(-10%, -12%) !important;
-    }
-    img[src*="lera.jpg"] {
-      position: absolute !important;
-      inset: auto !important;
-      width: 100% !important;
-      height: auto !important;
-      top: 0 !important;
-      left: 0 !important;
-      transform: none !important;
-      object-fit: initial !important;
-    }
 
     /* Inset vignette — depth on each half */
     .hero-half::after {
@@ -385,12 +371,19 @@
     .photo-card:hover img { transform: scale(1.04); filter: saturate(1.15) brightness(1.05); }
     .photo-label {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(26,18,16,0.9) 0%, transparent 100%);
-      padding: 44px 18px 18px; color: var(--white);
+      background: linear-gradient(to top, rgba(10,4,3,0.95) 0%, rgba(10,4,3,0.55) 60%, transparent 100%);
+      padding: 56px 20px 22px; color: var(--white);
       border-radius: 0 0 var(--r) var(--r);
     }
-    .photo-label h4 { font-size: 1.4rem; font-weight: 400; margin-bottom: 3px; }
-    .photo-label p  { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-2); }
+    .photo-label h4 {
+      font-size: 1.6rem; font-weight: 400; margin-bottom: 5px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+    .photo-label p  {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); opacity: 0.9;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
     .photo-card:nth-child(2) { margin-top: 0; }
 
     /* ═══ PHILOSOPHY (dark + warm air) ═══════════════ */
@@ -945,7 +938,7 @@
       </div>
       <!-- RIGHT: Андрей -->
       <div class="hero-half right">
-        <img src="./andrey.jpg" alt="Андрей — телесный терапевт" />
+        <img src="./andrey1.jpg" alt="Андрей — телесный терапевт" />
         <div class="half-overlay"></div>
         <div class="guide-tag">
           <span class="gname">Андрей</span>
@@ -1007,8 +1000,8 @@
       <div class="about-text">
         <p class="eyebrow reveal">Ваши проводники</p>
         <h2 class="reveal d1">Лера &amp; Андрей —<br>исследователи близости</h2>
-        <p class="reveal d2">Мы прошли долгий путь: от личного исцеления до глубокой работы с парами и одиночками. Наш подход — не инструкция, а живое путешествие в пространстве доверия.</p>
-        <p class="reveal d3">Объединяем тантрические традиции, телесно-ориентированную психологию и нейробиологию привязанности. Принимаем клиентов в Екатеринбурге и выезжаем по запросу.</p>
+        <p class="reveal d2">Мы прошли долгий путь — от бережного исцеления себя до глубокой и живой работы с парами и теми, кто ищет опору внутри себя. Мы создаём пространство, где можно не следовать правилам, а слышать себя. Это про тёплое, настоящее путешествие — в доверие, близость и встречу с собой.</p>
+        <p class="reveal d3">Объединяем тантрические традиции, телесно-ориентированную психологию и практики, помогающие телу и нервной системе расслабляться и чувствовать безопасность. Принимаем клиентов в Екатеринбурге и выезжаем по запросу.</p>
         <div class="q-line reveal d4">
           «Сексуальность — это не то, что вы делаете.<br>Это то, кем вы являетесь.»
         </div>
@@ -1033,12 +1026,12 @@
   <section class="section" id="philosophy">
     <div class="section-inner">
       <p class="eyebrow reveal">Наша философия</p>
-      <h2 class="reveal d1">Не техника — трансформация</h2>
+      <h2 class="reveal d1">Путь к себе через тело</h2>
       <p class="reveal d2">TantraLab — это не курсы по сексуальности и не психологическая консультация. Это живое пространство, где вы встречаете себя по-настоящему.</p>
       <div class="big-q reveal d3">
         Тело хранит каждое непрожитое чувство.<br>Мы помогаем ему наконец — заговорить.
       </div>
-      <p class="reveal d4">Через дыхание, прикосновение, присутствие и бережное ведение мы создаём условия, в которых исцеление происходит естественно — без насилия над собой.</p>
+      <p class="reveal d4">Через дыхание, прикосновение и внимательное присутствие мы помогаем постепенно отпускать напряжение, возвращая ощущение целостности, спокойствия и внутренней опоры.</p>
       <div class="phil-tags reveal d5">
         <span class="ptag">Тантра</span>
         <span class="ptag">Телесная терапия</span>
