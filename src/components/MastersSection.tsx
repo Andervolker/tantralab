@@ -156,10 +156,12 @@ const glowColors = [
 
 export default function MastersSection() {
   return (
-    <section id="masters" className="relative py-28 md:py-40 overflow-hidden">
-      <div className="blob-3 absolute top-1/3 right-0 w-[400px] h-[400px] bg-fuchsia-900/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="blob-1 absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-purple-900/10 rounded-full blur-[150px] pointer-events-none" />
-      <DecorativeLines variant="arc" opacity={0.7} />
+    <section id="masters" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0b0f19 0%, #0c0a22 45%, #0b0f19 100%)" }}>
+      <div className="blob-3 absolute top-1/3 right-0 w-[450px] h-[450px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.18)" }} />
+      <div className="blob-1 absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(88,28,135,0.16)" }} />
+      {/* Andrey fiery accent — near bottom third */}
+      <div className="blob-4 absolute bottom-[8%] right-[10%] w-[350px] h-[350px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(190,18,60,0.12)" }} />
+      <DecorativeLines variant="arc" opacity={0.6} />
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div

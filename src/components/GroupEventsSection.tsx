@@ -48,10 +48,12 @@ const events = [
 
 export default function GroupEventsSection() {
   return (
-    <section id="events" className="relative py-28 md:py-40 overflow-hidden">
-      <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] bg-violet-900/10 rounded-full blur-[200px] pointer-events-none" />
-      <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] bg-fuchsia-900/8 rounded-full blur-[180px] pointer-events-none" />
-      <DecorativeLines variant="diagonal" opacity={0.55} />
+    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0b0f19 0%, #09091e 45%, #0b0f19 100%)" }}>
+      <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(79,70,229,0.15)" }} />
+      <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(168,85,247,0.13)" }} />
+      {/* Centered glow accent */}
+      <div className="glow-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(109,40,217,0.08)" }} />
+      <DecorativeLines variant="diagonal" opacity={0.5} />
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div

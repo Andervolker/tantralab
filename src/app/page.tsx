@@ -5,8 +5,10 @@ import PhilosophySection from "@/components/PhilosophySection";
 import ProgramsSection from "@/components/ProgramsSection";
 import MastersSection from "@/components/MastersSection";
 import GroupEventsSection from "@/components/GroupEventsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import CommunitySection from "@/components/CommunitySection";
-import ContactSection from "@/components/ContactSection";
+import FAQSection from "@/components/FAQSection";
+import QuizContactSection from "@/components/QuizContactSection";
 import SiteFooter from "@/components/Footer";
 
 export default function Home() {
@@ -19,8 +21,10 @@ export default function Home() {
       <ProgramsSection />
       <MastersSection />
       <GroupEventsSection />
+      <TestimonialsSection />
       <CommunitySection />
-      <ContactSection />
+      <FAQSection />
+      <QuizContactSection />
       <SiteFooter />
     </main>
   );
