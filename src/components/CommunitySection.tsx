@@ -177,7 +177,7 @@ export default function CommunitySection() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.94, opacity: 0, y: 10 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               style={{
                 background: `linear-gradient(135deg, ${selected.gradFrom}, rgba(139,92,246,0.15), transparent)`,
                 boxShadow: `0 0 80px -20px ${selected.glow}, 0 24px 60px rgba(0,0,0,0.7)`,

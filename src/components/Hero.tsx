@@ -1,16 +1,16 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import DecorativeLines from "@/components/DecorativeLines";
 
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.13, delayChildren: 0.15 } },
+const stagger: Variants = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.13, delayChildren: 0.15 } },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" as const } },
 };
 
 export default function HeroSection() {
@@ -95,7 +95,7 @@ export default function HeroSection() {
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.1, delay: 0.2, ease: "easeOut" }}
           >
             <div className="relative group">
               {/* Outer glow pulse */}

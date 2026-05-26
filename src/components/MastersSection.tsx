@@ -89,7 +89,7 @@ const masters = [
   {
     name: "Елена",
     role: "Мастер телесных практик · Работа с сознанием и эмоциями",
-    photo: "/team-plaseholder.jpg",
+    photo: "/lena.jpg",
     description:
       "Елена работает на стыке телесных практик и глубинной работы с эмоциями и сознанием. Её сессии помогают выйти за пределы привычных паттернов, почувствовать себя в теле и встретить собственную внутреннюю природу.",
     forWhom: [
@@ -208,7 +208,7 @@ export default function MastersSection() {
               initial={{ opacity: 0, y: 48 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
             >
               {/* Photo */}

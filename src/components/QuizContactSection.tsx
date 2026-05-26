@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { CheckCircle, X, ArrowRight } from "lucide-react";
 import DecorativeLines from "@/components/DecorativeLines";
 
@@ -19,9 +19,9 @@ const step2 = [
   { id: "group", label: "Групповое мероприятие", desc: "Ecstatic Dance, Церемония, Саунд-хилинг" },
 ];
 
-const slideVariants = {
+const slideVariants: Variants = {
   enter: { opacity: 0, x: 32 },
-  center: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+  center: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
   exit: { opacity: 0, x: -32, transition: { duration: 0.25 } },
 };
 
@@ -275,7 +275,7 @@ export default function QuizContactSection() {
               initial={{ scale: 0.9, opacity: 0, y: 16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative z-10 max-w-sm w-full rounded-3xl p-[1.5px] text-center"
               style={{
                 background: "linear-gradient(135deg, rgba(168,85,247,0.5), rgba(109,40,217,0.2), transparent)",
