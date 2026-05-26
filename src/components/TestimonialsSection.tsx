@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
   return (
     <section
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0b0f19 0%, #110d22 45%, #0b0f19 100%)" }}
+      style={{ background: "#0b0f19" }}
     >
       {/* Blobs */}
       <div className="blob-1 absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.20)" }} />

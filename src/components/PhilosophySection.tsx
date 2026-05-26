@@ -9,21 +9,21 @@ export default function PhilosophySection() {
       className="relative py-32 md:py-44 overflow-hidden"
       style={{
         background:
-          "linear-gradient(160deg, #1a1040 0%, #1e1b4b 35%, #311042 65%, #1a1040 100%)",
+          "linear-gradient(180deg, #0b0f19 0%, #1a1040 15%, #1e1b4b 40%, #2d1155 60%, #1e1040 80%, #0b0f19 100%)",
       }}
     >
       {/* Rich inner glow blobs */}
       <div
-        className="blob-2 absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[180px] pointer-events-none"
-        style={{ background: "rgba(109,40,217,0.30)" }}
+        className="blob-2 absolute top-[-10%] right-[-5%] w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none"
+        style={{ background: "rgba(109,40,217,0.38)" }}
       />
       <div
-        className="blob-1 absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[160px] pointer-events-none"
-        style={{ background: "rgba(88,28,135,0.28)" }}
+        className="blob-1 absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full blur-[180px] pointer-events-none"
+        style={{ background: "rgba(88,28,135,0.35)" }}
       />
       <div
-        className="glow-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[200px] pointer-events-none"
-        style={{ background: "rgba(139,92,246,0.08)" }}
+        className="glow-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[220px] pointer-events-none"
+        style={{ background: "rgba(139,92,246,0.12)" }}
       />
 
       <DecorativeLines variant="diagonal" opacity={0.5} />
@@ -63,7 +63,7 @@ export default function PhilosophySection() {
           </h2>
 
           {/* Body text — brighter against dark indigo */}
-          <div className="space-y-7 text-white/62 text-lg md:text-xl leading-[1.88] font-light">
+          <div className="space-y-7 text-purple-100/75 text-lg md:text-xl leading-[1.88] font-light">
             <p>
               Тело всё помнит. Каждый стресс, каждое подавленное чувство,
               каждая непроговорённая боль — всё это откладывается в виде зажимов,

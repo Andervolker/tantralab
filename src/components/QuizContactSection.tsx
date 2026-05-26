@@ -80,7 +80,7 @@ export default function QuizContactSection() {
     <section
       id="contact"
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0b0f19 0%, #0d0b22 45%, #0b0f19 100%)" }}
+      style={{ background: "#0b0f19" }}
     >
       <div className="blob-1 absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(109,40,217,0.13)" }} />
       <div className="blob-2 absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(88,28,135,0.10)" }} />

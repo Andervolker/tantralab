@@ -156,12 +156,12 @@ const glowColors = [
 
 export default function MastersSection() {
   return (
-    <section id="masters" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0b0f19 0%, #0c0a22 45%, #0b0f19 100%)" }}>
-      <div className="blob-3 absolute top-1/3 right-0 w-[450px] h-[450px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.18)" }} />
-      <div className="blob-1 absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(88,28,135,0.16)" }} />
-      {/* Andrey fiery accent — near bottom third */}
-      <div className="blob-4 absolute bottom-[8%] right-[10%] w-[350px] h-[350px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(190,18,60,0.12)" }} />
-      <DecorativeLines variant="arc" opacity={0.6} />
+    <section id="masters" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0b0f19 0%, #1a0d35 20%, #311042 45%, #2a0a3a 65%, #0b0f19 100%)" }}>
+      <div className="blob-3 absolute top-[15%] right-0 w-[600px] h-[600px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(139,92,246,0.22)" }} />
+      <div className="blob-1 absolute top-[50%] left-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(88,28,135,0.20)" }} />
+      {/* Andrey fiery accent */}
+      <div className="blob-4 absolute bottom-[10%] right-[5%] w-[450px] h-[450px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(190,18,60,0.15)" }} />
+      <DecorativeLines variant="arc" opacity={0.5} />
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
@@ -250,14 +250,14 @@ export default function MastersSection() {
 
               {/* Content */}
               <div className={i % 2 === 1 ? "lg:order-1" : "lg:order-2"}>
-                <p className="text-white/52 leading-relaxed mb-8 text-base">{master.description}</p>
+                <p className="text-purple-100/70 leading-relaxed mb-8 text-base">{master.description}</p>
 
                 {/* For whom */}
                 <div className="mb-8">
                   <p className="text-purple-300/52 text-xs tracking-[0.25em] uppercase mb-4">Для кого подходит</p>
                   <ul className="space-y-2.5">
                     {master.forWhom.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-white/42 text-sm leading-relaxed">
+                      <li key={j} className="flex items-start gap-3 text-purple-100/60 text-sm leading-relaxed">
                         <span
                           className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0"
                           style={{

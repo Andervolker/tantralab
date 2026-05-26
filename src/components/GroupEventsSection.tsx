@@ -48,7 +48,7 @@ const events = [
 
 export default function GroupEventsSection() {
   return (
-    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0b0f19 0%, #09091e 45%, #0b0f19 100%)" }}>
+    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#0b0f19" }}>
       <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(79,70,229,0.15)" }} />
       <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(168,85,247,0.13)" }} />
       {/* Centered glow accent */}
@@ -82,11 +82,14 @@ export default function GroupEventsSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.1, duration: 0.75, ease: "easeOut" }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group relative rounded-3xl overflow-hidden"
-                style={{
-                  background: "rgba(10,13,26,0.95)",
-                  boxShadow: `0 0 0 1px rgba(139,92,246,0.08), 0 10px 40px rgba(0,0,0,0.5), 0 0 50px -20px ${ev.glow}`,
-                }}
+              className="group relative rounded-3xl overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.035)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: `0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)`,
+              }}
               >
                 {/* Gradient border */}
                 <div

@@ -59,7 +59,7 @@ export default function ProgramsSection() {
       <section
         id="programs"
         className="relative py-28 md:py-40 overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #0b0f19 0%, #08091c 45%, #0b0f19 100%)" }}
+        style={{ background: "#0b0f19" }}
       >
         <div
           className="blob-4 absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none"
@@ -97,21 +97,26 @@ export default function ProgramsSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                className="group relative rounded-3xl overflow-hidden cursor-default transition-shadow duration-400"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(30,27,60,0.75) 0%, rgba(20,15,45,0.9) 100%)",
-                  border: `1px solid ${p.borderColor}`,
-                  boxShadow: `0 0 0 1px rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.5)`,
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow =
-                    `0 0 0 1px ${p.borderColor}, 0 12px 48px rgba(0,0,0,0.55), 0 0 40px -8px ${p.glowHover}, inset 0 0 40px -20px ${p.glowHover}`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow =
-                    `0 0 0 1px rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.5)`;
-                }}
+              className="group relative rounded-3xl overflow-hidden cursor-default transition-all duration-400"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                border: `1px solid rgba(255,255,255,0.09)`,
+                boxShadow: `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`,
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = "rgba(255,255,255,0.07)";
+                el.style.border = `1px solid ${p.borderColor}`;
+                el.style.boxShadow = `0 12px 48px rgba(0,0,0,0.55), 0 0 40px -8px ${p.glowHover}, inset 0 1px 0 rgba(255,255,255,0.08)`;
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = "rgba(255,255,255,0.04)";
+                el.style.border = `1px solid rgba(255,255,255,0.09)`;
+                el.style.boxShadow = `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`;
+              }}
               >
                 {/* Top shimmer line */}
                 <div

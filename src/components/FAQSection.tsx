@@ -79,11 +79,11 @@ export default function FAQSection() {
   return (
     <section
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0b0f19 0%, #07091a 45%, #0b0f19 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0b0f19 0%, #0f0a28 35%, #180e38 55%, #0f0a28 75%, #0b0f19 100%)" }}
     >
       {/* Blobs */}
-      <div className="blob-4 absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(79,70,229,0.12)" }} />
-      <div className="blob-3 absolute bottom-1/4 left-0 w-[350px] h-[350px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(109,40,217,0.10)" }} />
+      <div className="blob-4 absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.22)" }} />
+      <div className="blob-3 absolute bottom-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(88,28,135,0.20)" }} />
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <motion.div
@@ -94,8 +94,8 @@ export default function FAQSection() {
           className="text-center mb-14"
         >
           <p className="text-purple-400/55 text-xs tracking-[0.45em] uppercase mb-4">FAQ</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-white/82 leading-tight">Часто задаваемые вопросы</h2>
-          <p className="text-white/30 mt-4 text-sm leading-relaxed">
+          <h2 className="font-serif text-4xl md:text-5xl text-white/90 leading-tight">Часто задаваемые вопросы</h2>
+          <p className="text-purple-200/45 mt-4 text-sm leading-relaxed">
             Всё, что хотели спросить, но не решились
           </p>
         </motion.div>
