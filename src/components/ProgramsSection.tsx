@@ -59,7 +59,7 @@ export default function ProgramsSection() {
       <section
         id="programs"
         className="relative py-28 md:py-40 overflow-hidden"
-        style={{ background: "#0b0f19" }}
+        style={{ background: "#131926" }}
       >
         <div
           className="blob-4 absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none"
@@ -90,33 +90,35 @@ export default function ProgramsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {programs.map((p, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href="#contact"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className="group relative rounded-3xl overflow-hidden cursor-default transition-all duration-400"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                border: `1px solid rgba(255,255,255,0.09)`,
-                boxShadow: `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`,
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(255,255,255,0.07)";
-                el.style.border = `1px solid ${p.borderColor}`;
-                el.style.boxShadow = `0 12px 48px rgba(0,0,0,0.55), 0 0 40px -8px ${p.glowHover}, inset 0 1px 0 rgba(255,255,255,0.08)`;
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(255,255,255,0.04)";
-                el.style.border = `1px solid rgba(255,255,255,0.09)`;
-                el.style.boxShadow = `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`;
-              }}
+                className="group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-400 block"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: `1px solid rgba(255,255,255,0.09)`,
+                  boxShadow: `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`,
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.background = "rgba(255,255,255,0.07)";
+                  el.style.border = `1px solid ${p.borderColor}`;
+                  el.style.boxShadow = `0 12px 48px rgba(0,0,0,0.55), 0 0 40px -8px ${p.glowHover}, inset 0 1px 0 rgba(255,255,255,0.08)`;
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.background = "rgba(255,255,255,0.04)";
+                  el.style.border = `1px solid rgba(255,255,255,0.09)`;
+                  el.style.boxShadow = `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)`;
+                }}
               >
                 {/* Top shimmer line */}
                 <div
@@ -134,7 +136,7 @@ export default function ProgramsSection() {
                   }}
                 />
 
-                <div className="relative z-10 p-8 md:p-10">
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
                   <div
                     className="text-5xl mb-7 font-light transition-all duration-400 group-hover:scale-110"
                     style={{
@@ -172,20 +174,31 @@ export default function ProgramsSection() {
                     ))}
                   </div>
 
-                  <a
-                    href="#masters"
-                    className="inline-flex items-center gap-2 text-sm transition-colors duration-300 group/link"
-                    style={{ color: `${p.accentColor}aa` }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = p.accentColor)}
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLElement).style.color = `${p.accentColor}aa`)
-                    }
+                  {/* Big CTA button */}
+                  <div
+                    className="mt-auto w-full flex items-center justify-between px-5 py-4 rounded-2xl transition-all duration-300"
+                    style={{
+                      background: `linear-gradient(135deg, ${p.glowHover} 0%, rgba(255,255,255,0.03) 100%)`,
+                      border: `1px solid ${p.borderColor}`,
+                      boxShadow: `0 0 20px -8px ${p.glowHover}`,
+                    }}
                   >
-                    Подробнее
-                    <span className="transition-transform duration-300 group-hover/link:translate-x-1.5">→</span>
-                  </a>
+                    <span className="text-sm font-medium" style={{ color: p.accentColor }}>
+                      Записаться
+                    </span>
+                    <span
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-sm transition-transform duration-300 group-hover:translate-x-1"
+                      style={{
+                        background: `${p.accentColor}22`,
+                        border: `1px solid ${p.accentColor}44`,
+                        color: p.accentColor,
+                      }}
+                    >
+                      →
+                    </span>
+                  </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

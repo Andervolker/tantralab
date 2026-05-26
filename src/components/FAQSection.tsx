@@ -79,7 +79,7 @@ export default function FAQSection() {
   return (
     <section
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0b0f19 0%, #0f0a28 35%, #180e38 55%, #0f0a28 75%, #0b0f19 100%)" }}
+      style={{ background: "linear-gradient(180deg, #131926 0%, #0f0a28 35%, #180e38 55%, #0f0a28 75%, #131926 100%)" }}
     >
       {/* Blobs */}
       <div className="blob-4 absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.22)" }} />

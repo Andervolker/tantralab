@@ -48,7 +48,7 @@ const events = [
 
 export default function GroupEventsSection() {
   return (
-    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#0b0f19" }}>
+    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#131926" }}>
       <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(79,70,229,0.15)" }} />
       <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(168,85,247,0.13)" }} />
       {/* Centered glow accent */}

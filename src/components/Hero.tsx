@@ -15,7 +15,7 @@ const fadeUp: Variants = {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0b0f19" }}>
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#131926" }}>
       {/* Ambient blobs */}
       <div className="blob-1 absolute top-[20%] left-[10%] w-[520px] h-[520px] rounded-full blur-[140px] pointer-events-none" style={{ background: "rgba(109,40,217,0.18)" }} />
       <div className="blob-2 absolute bottom-[15%] right-[8%] w-[420px] h-[420px] rounded-full blur-[120px] pointer-events-none" style={{ background: "rgba(124,58,237,0.13)" }} />
@@ -122,7 +122,7 @@ export default function HeroSection() {
                     style={{ height: "600px", maxWidth: "460px" }}
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19]/65 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#131926]/65 via-transparent to-transparent pointer-events-none" />
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                     style={{ background: "linear-gradient(135deg, rgba(168,85,247,0.1) 0%, transparent 55%)" }}
@@ -135,7 +135,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#0b0f19] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#131926] to-transparent pointer-events-none" />
     </section>
   );
 }

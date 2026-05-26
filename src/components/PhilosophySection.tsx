@@ -9,7 +9,7 @@ export default function PhilosophySection() {
       className="relative py-32 md:py-44 overflow-hidden"
       style={{
         background:
-          "linear-gradient(180deg, #0b0f19 0%, #1a1040 15%, #1e1b4b 40%, #2d1155 60%, #1e1040 80%, #0b0f19 100%)",
+          "linear-gradient(180deg, #131926 0%, #1a1040 15%, #1e1b4b 40%, #2d1155 60%, #1e1040 80%, #131926 100%)",
       }}
     >
       {/* Rich inner glow blobs */}
@@ -29,8 +29,8 @@ export default function PhilosophySection() {
       <DecorativeLines variant="diagonal" opacity={0.5} />
 
       {/* Top/bottom fade-in edges */}
-      <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#0b0f19] to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#0b0f19] to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#131926] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#131926] to-transparent pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div

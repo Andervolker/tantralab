@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
   return (
     <section
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "#0b0f19" }}
+      style={{ background: "#131926" }}
     >
       {/* Blobs */}
       <div className="blob-1 absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.20)" }} />
@@ -105,40 +105,44 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
-          {/* BEFORE */}
+          {/* BEFORE — тёмная, тяжёлая атмосфера */}
           <div
             className="rounded-3xl p-7 md:p-8 relative overflow-hidden"
             style={{
-              background: "rgba(10,8,16,0.96)",
-              border: "1px solid rgba(190,18,60,0.18)",
-              boxShadow: "0 0 0 1px rgba(0,0,0,0.3), 0 12px 40px rgba(0,0,0,0.45), 0 0 40px -15px rgba(190,18,60,0.2)",
+              background: "linear-gradient(160deg, rgba(4,2,8,0.99) 0%, rgba(8,4,14,0.98) 100%)",
+              border: "1px solid rgba(190,18,60,0.22)",
+              boxShadow: "0 0 0 1px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.65), 0 0 50px -12px rgba(190,18,60,0.25), inset 0 0 60px rgba(0,0,0,0.3)",
             }}
           >
-            {/* Top accent line */}
-            <div className="absolute top-0 left-[20%] right-[20%] h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(225,29,72,0.4), transparent)" }} />
+            {/* Heavy top line */}
+            <div className="absolute top-0 left-[15%] right-[15%] h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(225,29,72,0.55), transparent)" }} />
+            {/* Dark inner vignette */}
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(180,0,30,0.08) 0%, transparent 60%)" }} />
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-2 h-2 rounded-full bg-rose-500/60" style={{ boxShadow: "0 0 6px 2px rgba(225,29,72,0.3)" }} />
-              <span className="text-rose-400/65 text-xs tracking-[0.3em] uppercase font-light">До</span>
+              <div className="w-2 h-2 rounded-full bg-rose-600/70" style={{ boxShadow: "0 0 8px 3px rgba(190,18,60,0.4)" }} />
+              <span className="text-rose-500/60 text-xs tracking-[0.35em] uppercase font-light">До</span>
             </div>
-            <p className="text-white/55 text-base leading-relaxed font-light">{t.before}</p>
+            <p className="text-white/42 text-base leading-relaxed font-light italic">{t.before}</p>
           </div>
 
-          {/* AFTER */}
+          {/* AFTER — светлая, лёгкая атмосфера */}
           <div
             className="rounded-3xl p-7 md:p-8 relative overflow-hidden"
             style={{
-              background: "rgba(10,8,18,0.97)",
-              border: `1px solid ${t.accentAfter.replace("0.18","0.22").replace("0.22","0.22").replace("0.20","0.22")}`,
-              boxShadow: `0 0 0 1px rgba(0,0,0,0.3), 0 12px 40px rgba(0,0,0,0.45), 0 0 40px -15px ${t.accentAfter}`,
+              background: "linear-gradient(160deg, rgba(30,18,60,0.88) 0%, rgba(20,12,45,0.92) 50%, rgba(25,16,52,0.90) 100%)",
+              border: "1px solid rgba(168,85,247,0.30)",
+              boxShadow: `0 0 0 1px rgba(139,92,246,0.08), 0 16px 48px rgba(0,0,0,0.35), 0 0 60px -10px rgba(139,92,246,0.30), inset 0 0 80px rgba(139,92,246,0.04)`,
             }}
           >
-            {/* Top accent line */}
-            <div className="absolute top-0 left-[20%] right-[20%] h-px" style={{ background: `linear-gradient(90deg, transparent, ${t.accentAfter.replace("0.18","0.5").replace("0.22","0.5").replace("0.20","0.5")}, transparent)` }} />
+            {/* Luminous top line */}
+            <div className="absolute top-0 left-[15%] right-[15%] h-px" style={{ background: `linear-gradient(90deg, transparent, rgba(168,85,247,0.70), transparent)` }} />
+            {/* Soft purple inner glow */}
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(139,92,246,0.12) 0%, transparent 65%)" }} />
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-2 h-2 rounded-full" style={{ background: "rgba(168,85,247,0.8)", boxShadow: "0 0 8px 2px rgba(168,85,247,0.4)" }} />
-              <span className="text-purple-400/65 text-xs tracking-[0.3em] uppercase font-light">После</span>
+              <div className="w-2 h-2 rounded-full" style={{ background: "rgba(192,132,252,0.9)", boxShadow: "0 0 10px 3px rgba(168,85,247,0.55)" }} />
+              <span className="text-purple-300/75 text-xs tracking-[0.35em] uppercase font-light">После</span>
             </div>
-            <p className="text-white/70 text-base leading-relaxed font-light">{t.after}</p>
+            <p className="text-white/88 text-base leading-relaxed font-light">{t.after}</p>
           </div>
         </motion.div>
 
