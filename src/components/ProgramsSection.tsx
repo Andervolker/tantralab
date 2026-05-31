@@ -17,7 +17,7 @@ const programs = [
     description:
       "Путешествие в глубину тела через осознанное прикосновение, дыхание и присутствие. Индивидуальный формат, где Валерия бережно ведёт вас слой за слоем: снимая зажимы, восстанавливая чувствительность и возвращая контакт с собой. Каждая сессия выстраивается под ваш запрос — в атмосфере полного доверия и безопасности.",
     accent: "#22d3ee",
-    cta: "Записаться на практику",
+    imgPosition: "center top",
     gallery: ["/lera_modal1.jpg", "/lera_modal2.jpg", "/lera_modal3.jpg", "/lera_modal4.jpg"],
     showGallery: true,
   },
@@ -30,7 +30,7 @@ const programs = [
     description:
       "У каждого человека есть свой жизненный потенциал, данный природой. В нём уже заложены таланты, особенности характера, влияние на людей, связь с материальным миром, способности притягивать определённые события и возможности. Но не всегда это получается увидеть, почувствовать и раскрыть самостоятельно.\n\nСессия Шамбала — это пространство, где можно начать исследовать себя красиво, интересно и глубоко. Понять свои сильные стороны, увидеть внутренние ресурсы, почувствовать своё направление и узнать, как поддерживать в ресурсе свою жизненную силу и энергию в повседневной жизни.\n\nСессия подходит для женщин и мужчин — для каждого, кто чувствует отклик и готов к бережной, глубокой работе с телом, внутренним состоянием и личной трансформации.",
     accent: "#38bdf8",
-    cta: "Записаться на практику",
+    imgPosition: "center center",
     gallery: [],
     showGallery: false,
   },
@@ -43,7 +43,7 @@ const programs = [
     description:
       "Практики для двоих — возрождение чувствительности, доверия и глубины контакта между партнёрами. Дуэтный формат, который ведут Валерия и Андрей: контакты-настрои, синхронное дыхание, бережная работа с пространством между вами. Не требует физической подготовки — только желание снова почувствовать друг друга.",
     accent: "#22d3ee",
-    cta: "Записаться на тантра для пар",
+    imgPosition: "center 28%",
     gallery: [],
     showGallery: false,
   },
@@ -110,8 +110,16 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
           onClick={(e) => e.stopPropagation()}
         >
           {/* Banner */}
-          <div className="relative h-48 md:h-60 w-full overflow-hidden">
-            <Image src={program.bg} alt={program.title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 700px" priority />
+          <div className="relative w-full overflow-hidden aspect-[4/3] md:aspect-[16/10]">
+            <Image
+              src={program.bg}
+              alt={program.title}
+              fill
+              className="w-full h-full object-cover"
+              style={{ objectPosition: program.imgPosition }}
+              sizes="(max-width: 768px) 100vw, 700px"
+              priority
+            />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,14,36,1) 0%, rgba(8,14,36,0.4) 50%, rgba(8,14,36,0.2) 100%)" }} />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-9">
               <p className="text-xs tracking-[0.3em] uppercase mb-1.5" style={{ color: program.accent }}>{program.subtitle}</p>
@@ -129,10 +137,14 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
           </div>
 
           <div className="p-8 md:p-12">
-            {/* Description — supports multi-paragraph */}
-            <div className="space-y-5 mb-10">
+            {/* Description — auto-split into paragraphs, line breaks preserved */}
+            <div className="mb-10">
               {program.description.split("\n\n").map((para, i) => (
-                <p key={i} className="text-sm md:text-base leading-[1.9] font-light" style={{ color: "rgba(230,238,250,0.74)" }}>
+                <p
+                  key={i}
+                  className="mb-4 text-base leading-relaxed font-light whitespace-pre-line last:mb-0"
+                  style={{ color: "rgba(230,238,250,0.74)" }}
+                >
                   {para}
                 </p>
               ))}
@@ -160,7 +172,7 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
               </div>
             )}
 
-            {/* Single anchor CTA → scrolls to contacts */}
+            {/* Unified anchor CTA → closes modal & scrolls to contacts */}
             <a
               href="#contacts"
               onClick={onClose}
@@ -169,7 +181,7 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "0 14px 40px rgba(0,180,216,0.5)")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,180,216,0.32)")}
             >
-              {program.cta} <ArrowRight size={16} />
+              Записаться на практику <ArrowRight size={16} />
             </a>
           </div>
         </motion.div>
@@ -247,7 +259,8 @@ export default function ProgramsSection() {
                     alt={p.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ objectPosition: p.imgPosition }}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,14,36,0.96) 0%, rgba(8,14,36,0.5) 45%, rgba(8,14,36,0.2) 100%)" }} />
