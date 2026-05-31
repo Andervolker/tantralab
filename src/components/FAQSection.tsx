@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import BackdropStripes from "@/components/BackdropStripes";
 
 const faqs = [
   {
@@ -82,6 +83,7 @@ export default function FAQSection() {
       className="relative py-28 md:py-40 overflow-hidden"
       style={{ background: "#0A1128" }}
     >
+      <BackdropStripes />
       {/* Blobs */}
       <div className="blob-4 absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(0,119,182,0.18)" }} />
       <div className="blob-3 absolute bottom-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(31,64,150,0.18)" }} />

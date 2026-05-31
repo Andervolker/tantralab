@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, X } from "lucide-react";
 import DecorativeLines from "@/components/DecorativeLines";
+import BackdropStripes from "@/components/BackdropStripes";
 
 export default function QuizContactSection() {
   const [form, setForm] = useState({ name: "", phone: "" });
@@ -49,6 +50,7 @@ export default function QuizContactSection() {
       className="relative py-28 md:py-40 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #0A1128 0%, #0d1a3a 45%, #0A1128 100%)" }}
     >
+      <BackdropStripes />
       {/* Ocean blobs */}
       <div className="blob-1 absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(0,119,182,0.20)" }} />
       <div className="blob-2 absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(31,64,150,0.18)" }} />

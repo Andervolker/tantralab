@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, ZoomIn, CheckCircle, ArrowRight } from "lucide-react";
 import DecorativeLines from "@/components/DecorativeLines";
+import BackdropStripes from "@/components/BackdropStripes";
 
 /* ────────────────────────────────── Data ── */
 const programs = [
@@ -17,6 +18,7 @@ const programs = [
       "Путешествие в глубину тела через осознанное прикосновение, дыхание и присутствие. Индивидуальный формат, где Валерия бережно ведёт вас слой за слоем: снимая зажимы, восстанавливая чувствительность и возвращая контакт с собой. Каждая сессия выстраивается под ваш запрос — в атмосфере полного доверия и безопасности.",
     accent: "#00B4D8",
     gallery: ["/lera_modal1.jpg", "/lera_modal2.jpg", "/lera_modal3.jpg", "/lera_modal4.jpg"],
+    showGallery: true,
   },
   {
     id: "shambala",
@@ -27,7 +29,8 @@ const programs = [
     description:
       "Уникальный формат с двумя мастерами одновременно — Валерией и Еленой. Когда двое ведут вас в расслабление синхронно, разуму некуда бежать: ментальный контроль отступает, и тело впервые отпускает по-настоящему. Это глубокое, обволакивающее погружение, недостижимое в обычной индивидуальной сессии.",
     accent: "#7eb8e8",
-    gallery: ["/shambala1.jpg", "/lera_modal2.jpg", "/lena.jpg", "/lera_modal3.jpg"],
+    gallery: [],
+    showGallery: false,
   },
   {
     id: "tantra-par",
@@ -38,7 +41,8 @@ const programs = [
     description:
       "Практики для двоих — возрождение чувствительности, доверия и глубины контакта между партнёрами. Дуэтный формат, который ведут Валерия и Андрей: контакты-настрои, синхронное дыхание, бережная работа с пространством между вами. Не требует физической подготовки — только желание снова почувствовать друг друга.",
     accent: "#1F4096",
-    gallery: ["/tantra_par.jpg", "/andrey1.jpg", "/lera_modal4.jpg", "/lera1.jpg"],
+    gallery: [],
+    showGallery: false,
   },
 ];
 
@@ -159,25 +163,27 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
               {program.description}
             </p>
 
-            {/* Gallery */}
-            <div className="mb-9">
-              <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "rgba(0,180,216,0.5)" }}>Галерея практики</p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                {program.gallery.map((src, i) => (
-                  <div
-                    key={i}
-                    className="relative rounded-xl overflow-hidden cursor-zoom-in group"
-                    style={{ aspectRatio: "3/4", border: "1px solid rgba(0,180,216,0.12)" }}
-                    onClick={() => setLightboxSrc(src)}
-                  >
-                    <Image src={src} alt={`${program.title} — фото ${i + 1}`} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" sizes="160px" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "rgba(0,17,40,0.45)" }}>
-                      <ZoomIn size={20} style={{ color: "rgba(230,238,250,0.9)" }} />
+            {/* Gallery — only for practices that have one */}
+            {program.showGallery && program.gallery.length > 0 && (
+              <div className="mb-9">
+                <p className="text-xs tracking-[0.25em] uppercase mb-4" style={{ color: "rgba(0,180,216,0.5)" }}>Галерея практики</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  {program.gallery.map((src, i) => (
+                    <div
+                      key={i}
+                      className="relative rounded-xl overflow-hidden cursor-zoom-in group"
+                      style={{ aspectRatio: "3/4", border: "1px solid rgba(0,180,216,0.12)" }}
+                      onClick={() => setLightboxSrc(src)}
+                    >
+                      <Image src={src} alt={`${program.title} — фото ${i + 1}`} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" sizes="160px" />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "rgba(0,17,40,0.45)" }}>
+                        <ZoomIn size={20} style={{ color: "rgba(230,238,250,0.9)" }} />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Booking form */}
             <div
@@ -266,6 +272,7 @@ export default function ProgramsSection() {
   return (
     <>
       <section id="programs" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#0A1128" }}>
+        <BackdropStripes />
         <div className="blob-4 absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(31,64,150,0.16)" }} />
         <div className="blob-3 absolute top-1/4 right-0 w-[350px] h-[350px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(0,180,216,0.12)" }} />
         <DecorativeLines variant="cross" opacity={0.4} />

@@ -99,6 +99,12 @@ body::before {
   100% { background-position: 200% 0; }
 }
 
+/* Slow horizontal drift for ambient background stripes — makes the page "breathe" */
+@keyframes stripe-flow {
+  0%, 100% { transform: translateX(-3%); opacity: 0.5; }
+  50%       { transform: translateX(3%);  opacity: 1; }
+}
+
 /* ─── Utility animation classes ─── */
 .blob-1 { animation: blob-drift 18s ease-in-out infinite; }
 .blob-2 { animation: blob-drift-alt 22s ease-in-out infinite; animation-delay: -6s; }
@@ -109,6 +115,12 @@ body::before {
 .glow-slow   { animation: glow-pulse-slow 8s ease-in-out infinite; animation-delay: -3s; }
 .float-anim  { animation: float-up 6s ease-in-out infinite; }
 .frame-anim  { animation: frame-shimmer 4s ease-in-out infinite; }
+
+.stripe-1 { animation: stripe-flow 16s ease-in-out infinite; }
+.stripe-2 { animation: stripe-flow 22s ease-in-out infinite; animation-delay: -5s; }
+.stripe-3 { animation: stripe-flow 19s ease-in-out infinite reverse; animation-delay: -8s; }
+.stripe-4 { animation: stripe-flow 25s ease-in-out infinite; animation-delay: -3s; }
+.stripe-5 { animation: stripe-flow 21s ease-in-out infinite reverse; animation-delay: -11s; }
 
 /* ─── Neon text glow ─── */
 .text-glow {

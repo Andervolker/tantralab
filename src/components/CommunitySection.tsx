@@ -87,7 +87,7 @@ export default function CommunitySection() {
   const [selected, setSelected] = useState<Specialist | null>(null);
 
   return (
-    <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A1128 0%, #0d1a3a 20%, #101F42 50%, #0d1a3a 75%, #0A1128 100%)" }}>
+    <section id="community" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A1128 0%, #0d1a3a 20%, #101F42 50%, #0d1a3a 75%, #0A1128 100%)" }}>
       <div className="blob-2 absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(0,119,182,0.14)" }} />
       <div className="blob-3 absolute top-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(31,64,150,0.16)" }} />
 

@@ -152,6 +152,41 @@ export default function MastersSection() {
               </div>
             </motion.div>
           ))}
+
+          {/* Invitation — community keeps growing */}
+          <motion.a
+            href="#community"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: masters.length * 0.1 }}
+            className="group relative rounded-3xl overflow-hidden flex flex-col items-center justify-center text-center p-8 min-h-[320px] transition-all duration-400"
+            style={{
+              background: "rgba(255,255,255,0.025)",
+              border: "1px dashed rgba(0,180,216,0.25)",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = "rgba(0,180,216,0.5)";
+              el.style.background = "rgba(0,180,216,0.05)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = "rgba(0,180,216,0.25)";
+              el.style.background = "rgba(255,255,255,0.025)";
+            }}
+          >
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-transform duration-400 group-hover:scale-110" style={{ background: "rgba(31,64,150,0.18)", border: "1px solid rgba(0,180,216,0.25)" }}>
+              <span className="text-2xl" style={{ color: "rgba(0,180,216,0.7)" }}>✦</span>
+            </div>
+            <h3 className="font-serif text-2xl mb-2" style={{ color: "rgba(230,238,250,0.9)" }}>Ещё специалисты</h3>
+            <p className="text-sm leading-relaxed mb-5 max-w-[220px]" style={{ color: "rgba(230,238,250,0.45)" }}>
+              Наше сообщество растёт. В пространстве работают и приглашённые мастера разных направлений.
+            </p>
+            <span className="inline-flex items-center gap-2 text-sm transition-transform duration-300 group-hover:translate-x-1" style={{ color: "rgba(0,180,216,0.8)" }}>
+              Смотреть сообщество →
+            </span>
+          </motion.a>
         </div>
       </div>
     </section>
