@@ -5,7 +5,6 @@ import PhilosophySection from "@/components/PhilosophySection";
 import ProgramsSection from "@/components/ProgramsSection";
 import MastersSection from "@/components/MastersSection";
 import GroupEventsSection from "@/components/GroupEventsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import CommunitySection from "@/components/CommunitySection";
 import FAQSection from "@/components/FAQSection";
 import QuizContactSection from "@/components/QuizContactSection";
@@ -13,7 +12,7 @@ import SiteFooter from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#131926] text-white overflow-x-hidden">
+    <main className="bg-[#0A1128] text-white overflow-x-hidden">
       <PageFrame />
       <Navbar />
       <HeroSection />
@@ -21,7 +20,6 @@ export default function Home() {
       <ProgramsSection />
       <MastersSection />
       <GroupEventsSection />
-      <TestimonialsSection />
       <CommunitySection />
       <FAQSection />
       <QuizContactSection />

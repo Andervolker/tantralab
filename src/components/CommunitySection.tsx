@@ -87,8 +87,9 @@ export default function CommunitySection() {
   const [selected, setSelected] = useState<Specialist | null>(null);
 
   return (
-    <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #131926 0%, #130d2e 20%, #1c1240 50%, #130d2e 75%, #131926 100%)" }}>
-      <div className="blob-2 absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[180px] pointer-events-none" />
+    <section className="relative py-28 md:py-40 overflow-hidden" style={{ background: "linear-gradient(180deg, #0A1128 0%, #0d1a3a 20%, #101F42 50%, #0d1a3a 75%, #0A1128 100%)" }}>
+      <div className="blob-2 absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(0,119,182,0.14)" }} />
+      <div className="blob-3 absolute top-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(31,64,150,0.16)" }} />
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
@@ -97,11 +98,11 @@ export default function CommunitySection() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-purple-400/60 text-xs tracking-[0.4em] uppercase mb-4 text-center">Экосистема</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-center text-white/85 mb-5 leading-tight text-glow-sm">
+          <p className="text-xs tracking-[0.4em] uppercase mb-4 text-center" style={{ color: "rgba(0,180,216,0.6)" }}>Экосистема</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-center mb-5 leading-tight" style={{ color: "rgba(230,238,250,0.9)" }}>
             Сообщество специалистов
           </h2>
-          <p className="text-white/32 text-center mb-16 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-center mb-16 max-w-xl mx-auto text-sm leading-relaxed" style={{ color: "rgba(230,238,250,0.4)" }}>
             Сеть приглашённых мастеров разных направлений. Нажмите на карточку — узнайте подробнее.
           </p>
         </motion.div>

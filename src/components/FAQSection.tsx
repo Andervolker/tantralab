@@ -52,7 +52,8 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
         </span>
         <ChevronDown
           size={16}
-          className={`flex-shrink-0 mt-0.5 transition-all duration-300 ${isOpen ? "rotate-180 text-purple-400" : "text-purple-400/45"}`}
+          className={`flex-shrink-0 mt-0.5 transition-all duration-300 ${isOpen ? "rotate-180" : ""}`}
+          style={{ color: isOpen ? "rgba(0,180,216,0.9)" : "rgba(0,180,216,0.45)" }}
         />
       </button>
 
@@ -79,11 +80,11 @@ export default function FAQSection() {
   return (
     <section
       className="relative py-28 md:py-40 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #131926 0%, #0f0a28 35%, #180e38 55%, #0f0a28 75%, #131926 100%)" }}
+      style={{ background: "#0A1128" }}
     >
       {/* Blobs */}
-      <div className="blob-4 absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(109,40,217,0.22)" }} />
-      <div className="blob-3 absolute bottom-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(88,28,135,0.20)" }} />
+      <div className="blob-4 absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(0,119,182,0.18)" }} />
+      <div className="blob-3 absolute bottom-1/4 left-0 w-[450px] h-[450px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(31,64,150,0.18)" }} />
 
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <motion.div
@@ -93,9 +94,9 @@ export default function FAQSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="text-purple-400/55 text-xs tracking-[0.45em] uppercase mb-4">FAQ</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-white/90 leading-tight">Часто задаваемые вопросы</h2>
-          <p className="text-purple-200/45 mt-4 text-sm leading-relaxed">
+          <p className="text-xs tracking-[0.45em] uppercase mb-4" style={{ color: "rgba(0,180,216,0.6)" }}>FAQ</p>
+          <h2 className="font-serif text-4xl md:text-5xl leading-tight" style={{ color: "rgba(230,238,250,0.9)" }}>Часто задаваемые вопросы</h2>
+          <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(230,238,250,0.4)" }}>
             Всё, что хотели спросить, но не решились
           </p>
         </motion.div>
@@ -107,13 +108,15 @@ export default function FAQSection() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="rounded-3xl overflow-hidden"
           style={{
-            background: "rgba(9,11,22,0.96)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            boxShadow: "0 0 0 1px rgba(0,0,0,0.3), 0 20px 60px rgba(0,0,0,0.4), 0 0 60px -20px rgba(109,40,217,0.15)",
+            background: "rgba(230,238,250,0.04)",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 0 60px -20px rgba(0,180,216,0.18), inset 0 1px 0 rgba(230,238,250,0.06)",
           }}
         >
           {/* Top glow line */}
-          <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(168,85,247,0.4) 30%, rgba(217,70,239,0.25) 50%, rgba(168,85,247,0.4) 70%, transparent)" }} />
+          <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,180,216,0.45) 30%, rgba(126,184,232,0.3) 50%, rgba(0,180,216,0.45) 70%, transparent)" }} />
 
           <div className="px-7 md:px-10 py-2">
             {faqs.map((faq, i) => (
@@ -128,7 +131,7 @@ export default function FAQSection() {
           </div>
 
           {/* Bottom glow line */}
-          <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(139,92,246,0.2), transparent)" }} />
+          <div className="h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,180,216,0.22), transparent)" }} />
         </motion.div>
 
         <motion.div
@@ -138,10 +141,21 @@ export default function FAQSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-10"
         >
-          <p className="text-white/25 text-sm mb-4">Не нашли ответ?</p>
+          <p className="text-sm mb-4" style={{ color: "rgba(230,238,250,0.3)" }}>Не нашли ответ?</p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm border border-purple-500/22 text-purple-300/70 hover:text-purple-300 hover:border-purple-400/40 hover:bg-purple-500/8 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm transition-all duration-300"
+            style={{ border: "1px solid rgba(0,180,216,0.25)", color: "rgba(0,180,216,0.75)" }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = "rgba(0,180,216,0.5)";
+              el.style.background = "rgba(0,180,216,0.08)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = "rgba(0,180,216,0.25)";
+              el.style.background = "transparent";
+            }}
           >
             Написать напрямую →
           </a>

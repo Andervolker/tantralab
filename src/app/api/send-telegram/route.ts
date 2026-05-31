@@ -45,9 +45,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { name, phone, reason, format, timing } = body as {
+  const { name, phone, goal, reason, format, timing } = body as {
     name?: string;
     phone?: string;
+    goal?: string;
     reason?: string;
     format?: string;
     timing?: string;
@@ -56,12 +57,12 @@ export async function POST(req: NextRequest) {
   const date = new Date().toLocaleString("ru-RU", { timeZone: "Europe/Moscow" });
 
   const text = [
-    `✨ *Новая заявка — Валерия*`,
+    `🌊 *Новая заявка — Океан ощущений*`,
     ``,
     `👤 *Имя:* ${name || "—"}`,
     `📲 *Контакт:* ${phone || "—"}`,
     ``,
-    `💬 *Запрос:* ${reason || "Не указан"}`,
+    `🎯 *Цель визита:* ${goal || reason || "Не указана"}`,
     `📋 *Формат:* ${format || "С сайта"}`,
     `⏰ *Время:* ${timing || "Как можно скорее"}`,
     ``,

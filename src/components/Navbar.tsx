@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#philosophy", label: "Философия" },
-  { href: "#programs", label: "Программы" },
+  { href: "#", label: "Главная" },
+  { href: "#philosophy", label: "О пространстве" },
   { href: "#masters", label: "Мастера" },
-  { href: "#events", label: "Мероприятия" },
-  { href: "#contact", label: "Контакт" },
+  { href: "#events", label: "Услуги" },
+  { href: "#contact", label: "Контакты" },
 ];
 
 export default function Navbar() {
@@ -26,11 +26,11 @@ export default function Navbar() {
       style={
         scrolled
           ? {
-              background: "rgba(11,15,25,0.75)",
+              background: "rgba(10,17,40,0.85)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
-              borderBottom: "1px solid rgba(255,255,255,0.05)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.35)",
+              borderBottom: "1px solid rgba(31,64,150,0.25)",
+              boxShadow: "0 4px 32px rgba(0,0,0,0.45)",
             }
           : {
               background: "transparent",
@@ -41,22 +41,30 @@ export default function Navbar() {
       }
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Brand */}
         <a
           href="#"
-          className="font-serif text-xl tracking-[0.2em] text-white/88 hover:text-purple-300 transition-colors duration-300"
-          style={{ textShadow: scrolled ? "0 0 20px rgba(168,85,247,0.3)" : "none" }}
+          className="font-serif tracking-[0.18em] transition-colors duration-300"
+          style={{
+            fontSize: "clamp(0.8rem, 2vw, 1rem)",
+            color: scrolled ? "rgba(230,238,250,0.95)" : "rgba(255,255,255,0.92)",
+            textShadow: scrolled ? "0 0 24px rgba(0,180,216,0.35)" : "none",
+            letterSpacing: "0.2em",
+          }}
         >
-          ВАЛЕРИЯ
+          ОКЕАН ОЩУЩЕНИЙ
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-xs tracking-[0.15em] uppercase text-white/48 hover:text-white/90 transition-colors duration-300"
+              className="text-xs tracking-[0.18em] uppercase transition-all duration-300"
+              style={{ color: "rgba(230,238,250,0.5)" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(230,238,250,0.95)")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(230,238,250,0.5)")}
             >
               {l.label}
             </a>
@@ -68,21 +76,30 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-flex items-center px-5 py-2 rounded-full text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.04]"
           style={{
-            background: "rgba(109,40,217,0.15)",
-            border: "1px solid rgba(168,85,247,0.35)",
-            color: "rgba(216,180,254,0.85)",
-            boxShadow: "0 0 16px -4px rgba(168,85,247,0.25)",
+            background: "rgba(31,64,150,0.22)",
+            border: "1px solid rgba(0,180,216,0.35)",
+            color: "rgba(230,238,250,0.88)",
+            boxShadow: "0 0 18px -4px rgba(0,180,216,0.25)",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "rgba(31,64,150,0.38)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 28px -4px rgba(0,180,216,0.4)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "rgba(31,64,150,0.22)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px -4px rgba(0,180,216,0.25)";
           }}
         >
           Записаться
         </a>
 
-        {/* Mobile */}
+        {/* Mobile burger */}
         <button
-          className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl text-white/65 hover:text-white transition-colors"
+          className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl transition-colors"
           style={{
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(31,64,150,0.15)",
+            border: "1px solid rgba(0,180,216,0.2)",
+            color: "rgba(230,238,250,0.7)",
           }}
           onClick={() => setOpen(!open)}
           aria-label="Меню"
@@ -96,11 +113,11 @@ export default function Navbar() {
         <div
           className="md:hidden mx-4 mb-4 rounded-2xl p-6"
           style={{
-            background: "rgba(11,15,25,0.97)",
+            background: "rgba(10,17,40,0.97)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
+            border: "1px solid rgba(31,64,150,0.25)",
+            boxShadow: "0 16px 48px rgba(0,0,0,0.6)",
           }}
         >
           <div className="flex flex-col gap-5">
@@ -109,7 +126,8 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-white/58 hover:text-white transition-colors"
+                className="text-sm transition-colors"
+                style={{ color: "rgba(230,238,250,0.6)" }}
               >
                 {l.label}
               </a>
@@ -117,10 +135,11 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 text-center py-3 rounded-full text-sm text-purple-300 transition-all"
+              className="mt-2 text-center py-3 rounded-full text-sm transition-all"
               style={{
-                background: "rgba(109,40,217,0.15)",
-                border: "1px solid rgba(168,85,247,0.3)",
+                background: "rgba(31,64,150,0.22)",
+                border: "1px solid rgba(0,180,216,0.3)",
+                color: "rgba(230,238,250,0.9)",
               }}
             >
               Записаться

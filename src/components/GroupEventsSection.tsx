@@ -10,9 +10,9 @@ const events = [
     description:
       "Групповой формат для 6 пар. Практики близости, доверия и осознанного контакта в безопасном кругу единомышленников.",
     tag: "до 6 пар",
-    iconGrad: "linear-gradient(135deg, rgba(109,40,217,0.5), rgba(139,92,246,0.3))",
-    glow: "rgba(109,40,217,0.3)",
-    borderGrad: "linear-gradient(135deg, rgba(139,92,246,0.4), rgba(88,28,135,0.15))",
+    iconGrad: "linear-gradient(135deg, rgba(31,64,150,0.6), rgba(0,180,216,0.35))",
+    glow: "rgba(0,119,182,0.3)",
+    borderGrad: "linear-gradient(135deg, rgba(0,180,216,0.4), rgba(31,64,150,0.15))",
   },
   {
     Icon: Music2,
@@ -20,9 +20,9 @@ const events = [
     description:
       "Свободный танец как медитация. Тело двигается интуитивно, ум отдыхает, энергия течёт. Живая музыка, никаких правил.",
     tag: "групповой",
-    iconGrad: "linear-gradient(135deg, rgba(124,58,237,0.5), rgba(167,139,250,0.3))",
-    glow: "rgba(124,58,237,0.28)",
-    borderGrad: "linear-gradient(135deg, rgba(167,139,250,0.4), rgba(109,40,217,0.1))",
+    iconGrad: "linear-gradient(135deg, rgba(0,119,182,0.6), rgba(0,180,216,0.35))",
+    glow: "rgba(0,180,216,0.28)",
+    borderGrad: "linear-gradient(135deg, rgba(0,180,216,0.4), rgba(31,64,150,0.1))",
   },
   {
     Icon: Flame,
@@ -30,9 +30,9 @@ const events = [
     description:
       "Ритуальное пространство для глубокого погружения. Медитации, практики присутствия, работа с энергией в группе.",
     tag: "церемония",
-    iconGrad: "linear-gradient(135deg, rgba(168,85,247,0.5), rgba(217,70,239,0.3))",
-    glow: "rgba(168,85,247,0.28)",
-    borderGrad: "linear-gradient(135deg, rgba(217,70,239,0.35), rgba(139,92,246,0.1))",
+    iconGrad: "linear-gradient(135deg, rgba(31,64,150,0.6), rgba(126,184,232,0.35))",
+    glow: "rgba(31,64,150,0.32)",
+    borderGrad: "linear-gradient(135deg, rgba(126,184,232,0.35), rgba(31,64,150,0.1))",
   },
   {
     Icon: Waves,
@@ -40,19 +40,19 @@ const events = [
     description:
       "Исцеление звуком под живую музыку. Поющие чаши, горловое пение, вибрации, которые проникают глубже слов.",
     tag: "живая музыка",
-    iconGrad: "linear-gradient(135deg, rgba(79,70,229,0.5), rgba(109,40,217,0.3))",
-    glow: "rgba(79,70,229,0.28)",
-    borderGrad: "linear-gradient(135deg, rgba(139,92,246,0.4), rgba(79,70,229,0.1))",
+    iconGrad: "linear-gradient(135deg, rgba(0,180,216,0.55), rgba(31,64,150,0.35))",
+    glow: "rgba(0,119,182,0.28)",
+    borderGrad: "linear-gradient(135deg, rgba(0,180,216,0.4), rgba(31,64,150,0.1))",
   },
 ];
 
 export default function GroupEventsSection() {
   return (
-    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#131926" }}>
-      <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(79,70,229,0.15)" }} />
-      <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(168,85,247,0.13)" }} />
+    <section id="events" className="relative py-28 md:py-40 overflow-hidden" style={{ background: "#0A1128" }}>
+      <div className="blob-1 absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(31,64,150,0.18)" }} />
+      <div className="blob-4 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none" style={{ background: "rgba(0,180,216,0.13)" }} />
       {/* Centered glow accent */}
-      <div className="glow-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(109,40,217,0.08)" }} />
+      <div className="glow-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] rounded-full blur-[160px] pointer-events-none" style={{ background: "rgba(0,119,182,0.10)" }} />
       <DecorativeLines variant="diagonal" opacity={0.5} />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -62,11 +62,11 @@ export default function GroupEventsSection() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-purple-400/60 text-xs tracking-[0.4em] uppercase mb-4 text-center">Групповые форматы</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-center text-white/85 mb-5 leading-tight text-glow-sm">
+          <p className="text-xs tracking-[0.4em] uppercase mb-4 text-center" style={{ color: "rgba(0,180,216,0.6)" }}>Услуги · Групповые форматы</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-center mb-5 leading-tight" style={{ color: "rgba(230,238,250,0.9)" }}>
             Мероприятия и события
           </h2>
-          <p className="text-white/32 text-center mb-16 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-center mb-16 max-w-xl mx-auto text-sm leading-relaxed" style={{ color: "rgba(230,238,250,0.4)" }}>
             Живые встречи, где тело, звук и пространство становятся единым
           </p>
         </motion.div>
@@ -124,14 +124,14 @@ export default function GroupEventsSection() {
                     >
                       <Icon size={20} className="text-white/80" />
                     </div>
-                    <span className="text-xs text-purple-400/50 tracking-wider uppercase border border-purple-500/14 rounded-full px-3 py-1"
-                      style={{ background: "rgba(139,92,246,0.05)" }}>
+                    <span className="text-xs tracking-wider uppercase rounded-full px-3 py-1"
+                      style={{ color: "rgba(0,180,216,0.55)", border: "1px solid rgba(0,180,216,0.16)", background: "rgba(0,180,216,0.05)" }}>
                       {ev.tag}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-2xl text-white/90 mb-3">{ev.title}</h3>
-                  <p className="text-white/42 text-sm leading-relaxed">{ev.description}</p>
+                  <h3 className="font-serif text-2xl mb-3" style={{ color: "rgba(230,238,250,0.9)" }}>{ev.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(230,238,250,0.42)" }}>{ev.description}</p>
 
                   <div
                     className="mt-7 h-px transition-all duration-500"

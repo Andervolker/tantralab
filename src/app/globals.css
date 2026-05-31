@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #131926;
-  --foreground: #ede9f5;
+  --background: #0A1128;
+  --foreground: #E6EEFA;
+  --ocean-deep: #0A1128;
+  --ocean-mid: #101F42;
+  --ocean-blue: #1F4096;
+  --ocean-teal: #00B4D8;
+  --ocean-silk: #E6EEFA;
 }
 
 @theme inline {
-  --color-background: #131926;
-  --color-foreground: #ede9f5;
+  --color-background: #0A1128;
+  --color-foreground: #E6EEFA;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', sans-serif;
 }
@@ -22,12 +27,12 @@ html {
 }
 
 body {
-  background-color: #131926;
+  background-color: #0A1128;
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 64, 150, 0.04) 1px, transparent 1px);
   background-size: 72px 72px;
-  color: #ede9f5;
+  color: #E6EEFA;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
@@ -35,9 +40,9 @@ body {
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #131926; }
+::-webkit-scrollbar-track { background: #0A1128; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #9b74f5, #d946ef);
+  background: linear-gradient(to bottom, #1F4096, #00B4D8);
   border-radius: 2px;
 }
 
@@ -136,10 +141,24 @@ body::before {
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* ─── Mobile: cookie banner ultra-thin ─── */
+@media (max-width: 768px) {
+  .cookie-banner {
+    min-height: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    font-size: 11px !important;
+  }
+  .cookie-banner button {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+}
+
 @media print {
   nav, footer { display: none !important; }
   html, body {
-    background-color: #131926 !important;
+    background-color: #0A1128 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
