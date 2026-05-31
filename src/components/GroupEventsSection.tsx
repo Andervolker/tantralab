@@ -126,8 +126,8 @@ export default function GroupEventsSection() {
                     >
                       <Icon size={20} className="text-white/80" />
                     </div>
-                    <span className="text-xs tracking-wider uppercase rounded-full px-3 py-1"
-                      style={{ color: "rgba(0,180,216,0.55)", border: "1px solid rgba(0,180,216,0.16)", background: "rgba(0,180,216,0.05)" }}>
+                    <span className="text-xs tracking-[0.2em] uppercase"
+                      style={{ color: "rgba(0,180,216,0.55)" }}>
                       {ev.tag}
                     </span>
                   </div>

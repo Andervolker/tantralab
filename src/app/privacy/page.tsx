@@ -138,7 +138,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="mt-3">
               Для реализации прав свяжитесь с нами через форму обратной связи на{" "}
-              <Link href="/#contact" style={{ color: "rgba(0,180,216,0.8)" }}>главной странице</Link>.
+              <Link href="/#contacts" style={{ color: "rgba(0,180,216,0.8)" }}>главной странице</Link>.
             </p>
           </section>
 

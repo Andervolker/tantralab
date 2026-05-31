@@ -7,7 +7,7 @@ const links = [
   { href: "#philosophy", label: "О пространстве" },
   { href: "#masters", label: "Мастера" },
   { href: "#events", label: "Услуги" },
-  { href: "#contact", label: "Контакты" },
+  { href: "#contacts", label: "Контакты" },
 ];
 
 export default function Navbar() {
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#contact"
+          href="#contacts"
           className="hidden md:inline-flex items-center px-5 py-2 rounded-full text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.04]"
           style={{
             background: "rgba(31,64,150,0.22)",
@@ -133,7 +133,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="#contacts"
               onClick={() => setOpen(false)}
               className="mt-2 text-center py-3 rounded-full text-sm transition-all"
               style={{

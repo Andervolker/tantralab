@@ -145,7 +145,7 @@ export default function FAQSection() {
         >
           <p className="text-sm mb-4" style={{ color: "rgba(230,238,250,0.3)" }}>Не нашли ответ?</p>
           <a
-            href="#contact"
+            href="#contacts"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm transition-all duration-300"
             style={{ border: "1px solid rgba(0,180,216,0.25)", color: "rgba(0,180,216,0.75)" }}
             onMouseEnter={(e) => {

@@ -1,156 +1,134 @@
 "use client";
 import { motion } from "framer-motion";
-import DecorativeLines from "@/components/DecorativeLines";
 
-const reasons = [
-  "Тело устало от стресса и спешки.",
-  "Хочется расслабления, лёгкости и удовольствия.",
-  "Нужен глубокий контакт с собой или партнёром.",
-  "Вы ищете вектор для внутренних перемен.",
+const whyParagraphs = [
+  "Возможно, вы искали массаж.",
+  "Возможно, ваше тело устало от напряжения, стресса и постоянной спешки.",
+  "Возможно, вам хочется расслабиться, восстановить силы, почувствовать больше лёгкости и удовольствия от жизни.",
+  "Возможно, вы хотите перемен, но ещё не нашли свой вектор движения.",
+  "А может быть, вы ищете более глубокий контакт с собой или со своим партнёром.",
+  "Какой бы ни была причина, она важна.",
+  "Мы верим, что путь к внутренним изменениям часто начинается с простого шага — внимания к своему телу и своим ощущениям.",
+];
+
+const spaceParagraphs = [
+  "«Океан ощущений» – это сообщество специалистов, которые помогают людям восстанавливать связь с собой через тело.",
+  "Здесь вы можете выбрать мастера под свой запрос: массажиста, телесного практика или специалиста другого направления. Для каждого создана отдельная страница с описанием подхода, опыта и особенностей работы, чтобы вам было легче найти именно своего человека.",
+  "Мы собрали практики, которые помогают расслабиться, снять напряжение, восстановить ресурс, почувствовать больше лёгкости и гармонии. Для пар также доступны практики осознанной близости и тантрический подход к отношениям, где через прикосновение, доверие и присутствие можно открывать новые грани контакта друг с другом.",
+  "Это живое пространство, которое будет расти и развиваться вместе с людьми, которые его создают. Здесь будут появляться новые специалисты, практики, встречи и события.",
 ];
 
 export default function PhilosophySection() {
   return (
     <section
       id="philosophy"
-      className="relative py-28 md:py-44 overflow-hidden"
+      className="relative py-32 md:py-48 overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #0A1128 0%, #0d1a3a 20%, #101F42 50%, #0d1a3a 80%, #0A1128 100%)",
+        background:
+          "linear-gradient(180deg, #0A1128 0%, #0d1a3a 22%, #101F42 52%, #0d1a3a 80%, #0A1128 100%)",
       }}
     >
-      {/* Neon blob accents */}
-      <div
-        className="blob-2 absolute top-[-10%] right-[-5%] w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none"
-        style={{ background: "rgba(0,119,182,0.28)" }}
-      />
-      <div
-        className="blob-1 absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full blur-[180px] pointer-events-none"
-        style={{ background: "rgba(31,64,150,0.30)" }}
-      />
-      <div
-        className="glow-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[240px] pointer-events-none"
-        style={{ background: "rgba(0,180,216,0.07)" }}
-      />
-      {/* Subtle horizontal teal lines */}
-      <div className="absolute top-[30%] inset-x-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(0,180,216,0.08), transparent)" }} />
-      <div className="absolute top-[70%] inset-x-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(31,64,150,0.10), transparent)" }} />
+      {/* Brighter ambient spheres for inner glow / depth */}
+      <div className="blob-2 absolute top-[-8%] right-[-6%] w-[760px] h-[760px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(0,119,182,0.30)" }} />
+      <div className="blob-1 absolute bottom-[-8%] left-[-6%] w-[660px] h-[660px] rounded-full blur-[150px] pointer-events-none" style={{ background: "rgba(31,64,150,0.32)" }} />
+      <div className="glow-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full blur-[200px] pointer-events-none" style={{ background: "rgba(0,180,216,0.10)" }} />
 
-      <DecorativeLines variant="diagonal" opacity={0.4} />
+      <div className="max-w-3xl mx-auto px-8 md:px-12 relative z-10">
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-          {/* Left column */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8 }}
+        {/* ── Почему вы здесь? ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9 }}
+          className="text-center"
+        >
+          <p className="text-xs tracking-[0.45em] uppercase mb-7 font-light" style={{ color: "rgba(0,180,216,0.65)" }}>
+            Почему вы здесь
+          </p>
+          <h2
+            className="font-serif text-4xl md:text-6xl leading-tight mb-14"
+            style={{
+              background: "linear-gradient(135deg, #E6EEFA 0%, #b8d4f0 55%, #7eb8e8 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: "drop-shadow(0 0 32px rgba(0,180,216,0.28))",
+            }}
           >
-            <p
-              className="text-xs tracking-[0.45em] uppercase mb-5 font-light"
-              style={{ color: "rgba(0,180,216,0.65)" }}
-            >
-              О пространстве
-            </p>
-            <h2
-              className="font-serif text-4xl md:text-5xl leading-tight mb-8"
-              style={{
-                background: "linear-gradient(135deg, #E6EEFA 0%, #b8d4f0 60%, #7eb8e8 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 0 30px rgba(0,180,216,0.25))",
-              }}
-            >
-              Что это за пространство?
-            </h2>
-            <p
-              className="text-base md:text-lg leading-[1.9] font-light mb-8"
-              style={{ color: "rgba(230,238,250,0.72)" }}
-            >
-              «Океан ощущений» — сообщество телесных практиков и массажистов. На сайте собраны анкеты мастеров с описанием их уникального подхода, чтобы вы легко нашли своего специалиста.
-            </p>
-            <p
-              className="text-base leading-[1.9] font-light"
-              style={{ color: "rgba(230,238,250,0.65)" }}
-            >
-              Мы предлагаем индивидуальные практики для снятия стресса и восстановления ресурса, а также парные тантрические сессии для углубления доверия и осознанной близости. Проект постоянно развивается, пополняясь новыми событиями и экспертами.
-            </p>
-          </motion.div>
+            Почему вы здесь?
+          </h2>
 
-          {/* Right column — "Почему вы здесь?" glass card */}
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: 0.15 }}
+          <div className="space-y-6 md:space-y-7">
+            {whyParagraphs.map((p, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                className="text-lg md:text-xl leading-[1.85] font-light"
+                style={{ color: "rgba(230,238,250,0.74)" }}
+              >
+                {p}
+              </motion.p>
+            ))}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="font-serif italic text-2xl md:text-3xl pt-4"
+              style={{ color: "rgba(126,184,232,0.95)" }}
+            >
+              Добро пожаловать в «Океан ощущений»
+            </motion.p>
+          </div>
+        </motion.div>
+
+        {/* Soft divider */}
+        <div className="my-24 md:my-32 h-px mx-auto max-w-md" style={{ background: "linear-gradient(90deg, transparent, rgba(0,180,216,0.3), transparent)" }} />
+
+        {/* ── Что это за пространство? ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9 }}
+          className="text-center"
+        >
+          <p className="text-xs tracking-[0.45em] uppercase mb-7 font-light" style={{ color: "rgba(0,180,216,0.65)" }}>
+            О пространстве
+          </p>
+          <h2
+            className="font-serif text-4xl md:text-5xl leading-tight mb-14"
+            style={{
+              background: "linear-gradient(135deg, #E6EEFA 0%, #b8d4f0 55%, #7eb8e8 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: "drop-shadow(0 0 32px rgba(0,180,216,0.28))",
+            }}
           >
-            <div
-              className="relative rounded-3xl p-8 md:p-10"
-              style={{
-                background: "rgba(230,238,250,0.055)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(0,180,216,0.18)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(230,238,250,0.08)",
-              }}
-            >
-              {/* Corner accents */}
-              <div className="absolute top-0 left-[15%] right-[15%] h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,180,216,0.4), transparent)" }} />
-              <div className="absolute bottom-0 left-[25%] right-[25%] h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(31,64,150,0.3), transparent)" }} />
+            Что это за пространство?
+          </h2>
 
-              <p className="text-xs tracking-[0.35em] uppercase mb-6 font-light" style={{ color: "rgba(0,180,216,0.6)" }}>
-                Почему вы здесь?
-              </p>
-              <h3
-                className="font-serif text-2xl italic mb-7 leading-snug"
-                style={{ color: "rgba(230,238,250,0.88)" }}
+          <div className="space-y-7 md:space-y-8 text-left">
+            {spaceParagraphs.map((p, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.06 }}
+                className="text-base md:text-lg leading-[1.95] font-light"
+                style={{ color: "rgba(230,238,250,0.72)" }}
               >
-                Вы пришли в правильное место, если:
-              </h3>
-
-              <ul className="space-y-4 mb-8">
-                {reasons.map((r, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="flex items-start gap-4"
-                  >
-                    <span
-                      className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{
-                        background: "rgba(0,180,216,0.85)",
-                        boxShadow: "0 0 8px 2px rgba(0,180,216,0.4)",
-                      }}
-                    />
-                    <span
-                      className="text-sm leading-relaxed font-light"
-                      style={{ color: "rgba(230,238,250,0.75)" }}
-                    >
-                      {r}
-                    </span>
-                  </motion.li>
-                ))}
-              </ul>
-
-              <div
-                className="pt-6 border-t"
-                style={{ borderColor: "rgba(0,180,216,0.12)" }}
-              >
-                <p
-                  className="text-sm italic leading-relaxed font-light"
-                  style={{ color: "rgba(230,238,250,0.55)" }}
-                >
-                  Любая ваша причина важна. Путь к изменениям начинается с внимания к телу.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+                {p}
+              </motion.p>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

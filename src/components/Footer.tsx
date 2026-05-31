@@ -35,7 +35,7 @@ export default function SiteFooter() {
                 { href: "#philosophy", label: "О пространстве" },
                 { href: "#masters", label: "Мастера" },
                 { href: "#events", label: "Услуги" },
-                { href: "#contact", label: "Контакты" },
+                { href: "#contacts", label: "Контакты" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
@@ -57,7 +57,7 @@ export default function SiteFooter() {
             <p className="text-xs tracking-[0.25em] uppercase mb-5" style={{ color: "rgba(0,180,216,0.5)" }}>Связь</p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#contact" className="transition-colors duration-300" style={{ color: "rgba(230,238,250,0.4)" }}
+                <a href="#contacts" className="transition-colors duration-300" style={{ color: "rgba(230,238,250,0.4)" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(230,238,250,0.8)")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(230,238,250,0.4)")}>
                   Оставить запрос
