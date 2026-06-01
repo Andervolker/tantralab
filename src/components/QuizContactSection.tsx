@@ -11,23 +11,21 @@ const masters: { name: string; accent: string; contacts: Contact[] }[] = [
     name: "Валерия",
     accent: "#00B4D8",
     contacts: [
-      { label: "Telegram-канал", value: "@lera_indigo_tantra", href: "https://t.me/lera_indigo_tantra", icon: "tg" },
-      { label: "WhatsApp / MAX", value: "+7 985 030-14-69", href: "https://wa.me/79850301469", icon: "wa" },
-      { label: "Telegram", value: "@leraindigo", href: "https://t.me/leraindigo", icon: "tg" },
+      { label: "Telegram", value: "Написать Валерии", href: "https://t.me/leraindigo", icon: "tg" },
     ],
   },
   {
     name: "Елена",
     accent: "#7eb8e8",
     contacts: [
-      { label: "Telegram", value: "Написать Елене", href: "https://t.me/elena_ocean", icon: "tg" },
+      { label: "Telegram", value: "Написать Елене", href: "https://t.me/Elena_ES_12", icon: "tg" },
     ],
   },
   {
     name: "Андрей",
     accent: "#38bdf8",
     contacts: [
-      { label: "Telegram", value: "@andervolker", href: "https://t.me/andervolker", icon: "tg" },
+      { label: "Telegram", value: "Написать Андрею", href: "https://t.me/andervolker", icon: "tg" },
     ],
   },
 ];
