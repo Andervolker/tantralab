@@ -12,6 +12,8 @@ const programs = [
     id: "tantra",
     title: "Тантра",
     subtitle: "Индивидуальные сессии",
+    price: "15 000 ₽",
+    duration: "от 2,5 часов",
     bg: "/lera_indiv.jpg",
     short: "Индивидуальный формат с Валерией — глубокая работа с телом, дыханием и присутствием.",
     description:
@@ -25,6 +27,8 @@ const programs = [
     id: "shambala",
     title: "Шамбала",
     subtitle: "Сессия в 4 руки",
+    price: "20 000 ₽",
+    duration: "2,5 часа",
     bg: "/shambala1.jpg",
     short: "Пространство, где можно начать исследовать себя — красиво, интересно и глубоко.",
     description:
@@ -38,12 +42,14 @@ const programs = [
     id: "tantra-par",
     title: "Тантра для пар",
     subtitle: "Совместные практики",
+    price: "20 000 ₽",
+    duration: "3,5 часа",
     bg: "/tantra_par.jpg",
     short: "Дуэтный формат с Андреем — возрождение чувствительности и доверия между партнёрами.",
     description:
       "Практики для двоих — возрождение чувствительности, доверия и глубины контакта между партнёрами. Дуэтный формат, который ведут Валерия и Андрей: контакты-настрои, синхронное дыхание, бережная работа с пространством между вами. Не требует физической подготовки — только желание снова почувствовать друг друга.",
     accent: "#22d3ee",
-    imgPosition: "center 18%",
+    imgPosition: "center center",
     gallery: [],
     showGallery: false,
   },
@@ -123,7 +129,12 @@ function PracticeModal({ program, onClose }: { program: Program; onClose: () => 
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,14,36,1) 0%, rgba(8,14,36,0.4) 50%, rgba(8,14,36,0.2) 100%)" }} />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-9">
               <p className="text-xs tracking-[0.3em] uppercase mb-1.5" style={{ color: program.accent }}>{program.subtitle}</p>
-              <h3 className="font-serif text-3xl md:text-4xl" style={{ color: "rgba(230,238,250,0.95)" }}>{program.title}</h3>
+              <h3 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: "rgba(230,238,250,0.95)" }}>{program.title}</h3>
+              <div className="flex items-center gap-3">
+                <span className="text-sm font-semibold" style={{ color: "rgba(230,238,250,0.95)" }}>{program.price}</span>
+                <span className="text-xs" style={{ color: "rgba(230,238,250,0.4)" }}>·</span>
+                <span className="text-xs" style={{ color: "rgba(230,238,250,0.55)" }}>{program.duration}</span>
+              </div>
             </div>
             <button
               onClick={onClose}
@@ -240,8 +251,8 @@ export default function ProgramsSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.1 }}
                 onClick={() => setSelected(p)}
-                className="group relative rounded-3xl overflow-hidden text-left cursor-pointer transition-all duration-400"
-                style={{ minHeight: "440px", boxShadow: "0 12px 40px rgba(0,0,0,0.45)" }}
+                className="group relative rounded-3xl overflow-hidden text-left cursor-pointer transition-all duration-400 min-h-[300px] md:min-h-[440px]"
+                style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.45)" }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.boxShadow = `0 24px 64px rgba(0,0,0,0.6), 0 0 60px -12px ${p.accent}66`;
@@ -263,12 +274,18 @@ export default function ProgramsSection() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,14,36,0.96) 0%, rgba(8,14,36,0.5) 45%, rgba(8,14,36,0.2) 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,14,36,0.97) 0%, rgba(8,14,36,0.55) 45%, rgba(8,14,36,0.18) 100%)" }} />
 
-                <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-9" style={{ minHeight: "440px" }}>
+                <div className="relative z-10 h-full flex flex-col justify-end p-7 md:p-9 min-h-[300px] md:min-h-[440px]">
                   <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: p.accent }}>{p.subtitle}</p>
-                  <h3 className="font-serif text-3xl mb-3" style={{ color: "rgba(255,255,255,0.96)" }}>{p.title}</h3>
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(230,238,250,0.72)" }}>{p.short}</p>
+                  <h3 className="font-serif text-3xl mb-2" style={{ color: "rgba(255,255,255,0.96)" }}>{p.title}</h3>
+                  {/* Price badge */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-base font-semibold" style={{ color: "rgba(230,238,250,0.95)" }}>{p.price}</span>
+                    <span className="text-xs" style={{ color: "rgba(230,238,250,0.45)" }}>·</span>
+                    <span className="text-xs" style={{ color: "rgba(230,238,250,0.45)" }}>{p.duration}</span>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(230,238,250,0.66)" }}>{p.short}</p>
                   <span className="inline-flex items-center gap-2 text-sm font-medium transition-transform duration-300 group-hover:translate-x-1" style={{ color: p.accent }}>
                     Подробнее <ArrowRight size={15} />
                   </span>
